@@ -5,6 +5,12 @@
  */
 package examen2p2_serliogiron_12141146;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
+
 /**
  *
  * @author usuario
@@ -51,6 +57,11 @@ public class Main extends javax.swing.JFrame {
         jButton1.setText("Grabar Cancion");
 
         jButton2.setText("Guardar Cancion");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Reproducir Cancion");
 
@@ -119,6 +130,30 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String nombre = JOptionPane.showInputDialog(this, "Ingrese le nombre de la cancion");
+        String categoria = JOptionPane.showInputDialog(this, "Ingrese la categoria");
+        
+        
+        Cancion song = new Cancion(nombre, categoria);
+        
+        DefaultTreeModel modelo;
+        
+        modelo = (DefaultTreeModel) jTree1.getModel();
+        
+        DefaultMutableTreeNode raiz;
+        raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        
+        DefaultMutableTreeNode cate = new DefaultMutableTreeNode(categoria);
+        
+        DefaultMutableTreeNode cancion = new DefaultMutableTreeNode(song);
+        
+        cate.add(cancion);
+        raiz.add(cate);
+        modelo.reload();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+    ArrayList <String> categorias = new ArrayList();
     /**
      * @param args the command line arguments
      */
