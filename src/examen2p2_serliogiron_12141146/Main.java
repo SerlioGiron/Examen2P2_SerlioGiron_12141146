@@ -156,7 +156,7 @@ public class Main extends javax.swing.JFrame {
         
         nuila.setText("");
         
-        String nombre = JOptionPane.showInputDialog(this, "Ingrese le nombre de la cancion");
+        String nombre = JOptionPane.showInputDialog(this, "Ingrese el nombre de la cancion");
         String categoria = JOptionPane.showInputDialog(this, "Ingrese la categoria");
         
         

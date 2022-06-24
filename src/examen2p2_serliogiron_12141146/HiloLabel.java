@@ -25,33 +25,34 @@ public class HiloLabel extends Thread{
 
     @Override
     public void run() {
-        while (corre) {
-            
-            
-            System.out.println("num: " + 1);
-            etiqueta.setText("Grabando en " + 1 + " ...");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
+        
+        System.out.println("num: " + 1);
+        etiqueta.setText(1 + " ...");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
 
-            }
-            System.out.println("num: " + 2);
-            etiqueta.setText("Grabando en " + 3 + " ...");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
+        }
+        System.out.println("num: " + 2);
+        etiqueta.setText(2 + " ...");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
 
-            }
-            System.out.println("num: " + 3);
-            etiqueta.setText("Grabando en " + 3 + " ...");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
+        }
+        System.out.println("num: " + 3);
+        etiqueta.setText(3 + " ...");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
 
-            }
-            
-            //label.setText("Grabando ...");
-            corre = false;
+        }
+        System.out.println("num: " + 3);
+        etiqueta.setText("Grabando ...");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+
         }
     }
     
