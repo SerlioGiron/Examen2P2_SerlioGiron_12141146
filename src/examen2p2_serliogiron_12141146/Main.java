@@ -6,6 +6,8 @@
 package examen2p2_serliogiron_12141146;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -157,6 +159,10 @@ public class Main extends javax.swing.JFrame {
         
         Cancion song = new Cancion(nombre, categoria);
         
+        for (int i = 0; i < jTextArea1.getText().length(); i++) {
+            song.getCaracteres().add(jTextArea1.getText().charAt(i));
+        }
+        
         DefaultTreeModel modelo;
         
         modelo = (DefaultTreeModel) jTree1.getModel();
@@ -186,21 +192,37 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextArea1KeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        for (int i = 0; i < 3; i++) {
-            HiloLabel h = new HiloLabel(i+1, jLabel1);
-            h.start();
-        }
+        HiloLabel h = new HiloLabel(jLabel1);
+        h.start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
+        jTextArea1.setText("");
+        
         Cancion can;
 
-        TreePath path = new TreePath(jTree1.getSelectionPath());
+        TreePath path;
+        path = jTree1.getSelectionPath();
+        
+        DefaultMutableTreeNode nodo = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+        
+        //DefaultMutableTreeNode nodo2 = (DefaultMutableTreeNode) nodo.getpa
 
-        //can = (Cancion) jTree1.getModel().getChild(jTree1, path.getPathCount()).toString();
-        System.out.println(jTree1.getModel().getChild(jTree1, path.getPathCount()).toString());
-        //System.out.println(can);
+        can = (Cancion)nodo.getUserObject();
+        
+        System.out.println(can);
+        
+        String text = "";
+        
+        for (int i = 0; i < can.getCaracteres().size(); i++) {
+            text += can.getCaracteres().get(i);
+        }
+        
+        System.out.println("text: " + text);
+        HiloRep h = new HiloRep(jProgressBar1,text,jTextArea1);
+        h.start();
+        
     }//GEN-LAST:event_jButton3ActionPerformed
     ArrayList <String> categorias = new ArrayList();
     /**

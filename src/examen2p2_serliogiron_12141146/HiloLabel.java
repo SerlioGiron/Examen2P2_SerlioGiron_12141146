@@ -13,12 +13,12 @@ import javax.swing.JLabel;
  * @author usuario
  */
 public class HiloLabel extends Thread{
-    int num;
+    //int num;
     boolean corre;
     JLabel label;
 
-    public HiloLabel(int num, JLabel label) {
-        this.num = num;
+    public HiloLabel(JLabel label) {
+        //this.num = num;
         this.label = label;
         this.corre = true;
     }
@@ -27,12 +27,14 @@ public class HiloLabel extends Thread{
     public void run() {
         while (corre) {
             
-            System.out.println("num: " + num);
-            label.setText("Grabando en " + num + " ...");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
+            for (int i = 1; i <= 3; i++) {
+                System.out.println("num: " + i);
+                label.setText("Grabando en " + i + " ...");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
 
+                }
             }
             
             corre = false;

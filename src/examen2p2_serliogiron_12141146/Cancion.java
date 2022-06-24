@@ -18,7 +18,7 @@ public class Cancion implements Serializable{
     
     String nombre;
     String categoria;
-    ArrayList caracteres = new ArrayList();
+    ArrayList <Character> caracteres = new ArrayList();
 
     public Cancion() {
     }
