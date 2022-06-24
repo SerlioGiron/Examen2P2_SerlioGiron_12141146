@@ -60,6 +60,11 @@ public class Main extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea1);
 
         jButton1.setText("Grabar Cancion");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Guardar Cancion");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +83,6 @@ public class Main extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +167,13 @@ public class Main extends javax.swing.JFrame {
         HiloBar h = new HiloBar(jProgressBar1, evt.getKeyChar());
         h.start();
     }//GEN-LAST:event_jTextArea1KeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        for (int i = 0; i < 3; i++) {
+            HiloLabel h = new HiloLabel(i+1, jLabel1);
+            h.start();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     ArrayList <String> categorias = new ArrayList();
     /**
      * @param args the command line arguments

@@ -6,38 +6,31 @@
 package examen2p2_serliogiron_12141146;
 
 import java.awt.Color;
-import javax.swing.JProgressBar;
+import javax.swing.JLabel;
 
 /**
  *
  * @author usuario
  */
-public class HiloBar extends Thread{
-    JProgressBar barra;
+public class HiloLabel extends Thread{
+    int num;
     boolean corre;
-    char caracter;
+    JLabel label;
 
-    public HiloBar(JProgressBar barra, char caracter) {
-        this.barra = barra;
+    public HiloLabel(int num, JLabel label) {
+        this.num = num;
+        this.label = label;
         this.corre = true;
-        this.caracter = caracter;
     }
 
     @Override
     public void run() {
         while (corre) {
-            int car = caracter;
-            barra.setMaximum(122);
             
-            if (car<97) {
-                barra.setBackground(Color.green);
-            }else{
-                barra.setBackground(Color.red);
-            }
-            
-            barra.setValue(car);
+            System.out.println("num: " + num);
+            label.setText("Grabando en " + num + " ...");
             try {
-                Thread.sleep(10);
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
 
             }
