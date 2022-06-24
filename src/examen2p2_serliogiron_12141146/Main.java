@@ -52,6 +52,11 @@ public class Main extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextArea1KeyPressed(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTextArea1);
 
         jButton1.setText("Grabar Cancion");
@@ -153,6 +158,11 @@ public class Main extends javax.swing.JFrame {
         modelo.reload();
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextArea1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyPressed
+        HiloBar h = new HiloBar(jProgressBar1, evt.getKeyChar());
+        h.start();
+    }//GEN-LAST:event_jTextArea1KeyPressed
     ArrayList <String> categorias = new ArrayList();
     /**
      * @param args the command line arguments

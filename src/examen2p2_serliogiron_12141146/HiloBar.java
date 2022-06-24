@@ -26,13 +26,15 @@ public class HiloBar extends Thread{
     public void run() {
         while (corre) {
             int car = caracter;
-            
+            barra.setMaximum(255);
             barra.setValue(car);
             try {
                 Thread.sleep(10);
             } catch (InterruptedException ex) {
 
             }
+            
+            corre = false;
         }
     }
     
