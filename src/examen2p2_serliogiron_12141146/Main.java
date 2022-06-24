@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 
 /**
  *
@@ -192,12 +193,14 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-            Cancion can;
-            
-            
-        } catch (Exception e) {
-        }
+        
+        Cancion can;
+
+        TreePath path = new TreePath(jTree1.getSelectionPath());
+
+        //can = (Cancion) jTree1.getModel().getChild(jTree1, path.getPathCount()).toString();
+        System.out.println(jTree1.getModel().getChild(jTree1, path.getPathCount()).toString());
+        //System.out.println(can);
     }//GEN-LAST:event_jButton3ActionPerformed
     ArrayList <String> categorias = new ArrayList();
     /**
