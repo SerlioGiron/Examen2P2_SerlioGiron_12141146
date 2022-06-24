@@ -5,13 +5,14 @@
  */
 package examen2p2_serliogiron_12141146;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author usuario
  */
-public class Cancion {
+public class Cancion implements Serializable{
     //Las canciones tienen nombre, categoría y la lista de
     //caracteres que componen dicha canción
     

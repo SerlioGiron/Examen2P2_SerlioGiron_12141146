@@ -22,6 +22,11 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        
+        adminTree ap = new adminTree("./trees.tree", jTree1);
+        ap.cargarArchivo();
+        
+        jTree1.setModel(ap.getTree().getModel());
     }
 
     /**
@@ -74,6 +79,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButton3.setText("Reproducir Cancion");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Pausar Cancion");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -161,6 +171,12 @@ public class Main extends javax.swing.JFrame {
         raiz.add(cate);
         modelo.reload();
         
+        adminTree ap = new adminTree("./trees.tree", jTree1);
+        ap.escribirArchivo();
+        
+        JOptionPane.showMessageDialog(this,"Tree guardado");
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextArea1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyPressed
@@ -174,6 +190,15 @@ public class Main extends javax.swing.JFrame {
             h.start();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            Cancion can;
+            
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
     ArrayList <String> categorias = new ArrayList();
     /**
      * @param args the command line arguments
