@@ -153,6 +153,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        jLabel1.setText("");
+        
         String nombre = JOptionPane.showInputDialog(this, "Ingrese le nombre de la cancion");
         String categoria = JOptionPane.showInputDialog(this, "Ingrese la categoria");
         

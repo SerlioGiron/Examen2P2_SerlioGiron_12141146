@@ -27,17 +27,31 @@ public class HiloLabel extends Thread{
     public void run() {
         while (corre) {
             
-            for (int i = 1; i <= 3; i++) {
-                System.out.println("num: " + i);
-                label.setText("Grabando en " + i + " ...");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
+            
+            System.out.println("num: " + 1);
+            label.setText("Grabando en " + 1 + " ...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
 
-                }
+            }
+            System.out.println("num: " + 2);
+            label.setText("Grabando en " + 3 + " ...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+
+            }
+            System.out.println("num: " + 3);
+            label.setText("Grabando en " + 3 + " ...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+
             }
             
-            corre = false;
+            //label.setText("Grabando ...");
+            //corre = false;
         }
     }
     
