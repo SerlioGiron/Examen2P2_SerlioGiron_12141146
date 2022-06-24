@@ -15,11 +15,11 @@ import javax.swing.JLabel;
 public class HiloLabel extends Thread{
     //int num;
     boolean corre;
-    JLabel label;
+    JLabel etiqueta;
 
     public HiloLabel(JLabel label) {
         //this.num = num;
-        this.label = label;
+        this.etiqueta = label;
         this.corre = true;
     }
 
@@ -29,21 +29,21 @@ public class HiloLabel extends Thread{
             
             
             System.out.println("num: " + 1);
-            label.setText("Grabando en " + 1 + " ...");
+            etiqueta.setText("Grabando en " + 1 + " ...");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
 
             }
             System.out.println("num: " + 2);
-            label.setText("Grabando en " + 3 + " ...");
+            etiqueta.setText("Grabando en " + 3 + " ...");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
 
             }
             System.out.println("num: " + 3);
-            label.setText("Grabando en " + 3 + " ...");
+            etiqueta.setText("Grabando en " + 3 + " ...");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
@@ -51,7 +51,7 @@ public class HiloLabel extends Thread{
             }
             
             //label.setText("Grabando ...");
-            //corre = false;
+            corre = false;
         }
     }
     

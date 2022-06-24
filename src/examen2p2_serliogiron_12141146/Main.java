@@ -50,7 +50,7 @@ public class Main extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        nuila = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,7 +95,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        nuila.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +105,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nuila, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +128,7 @@ public class Main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(66, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nuila, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -154,7 +154,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        jLabel1.setText("");
+        nuila.setText("");
         
         String nombre = JOptionPane.showInputDialog(this, "Ingrese le nombre de la cancion");
         String categoria = JOptionPane.showInputDialog(this, "Ingrese la categoria");
@@ -195,7 +195,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextArea1KeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        HiloLabel h = new HiloLabel(jLabel1);
+        
+        System.out.println("hhhhhhhhhh");
+        
+        HiloLabel h = new HiloLabel(nuila);
         h.start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -268,11 +271,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTree jTree1;
+    private javax.swing.JLabel nuila;
     // End of variables declaration//GEN-END:variables
 }
